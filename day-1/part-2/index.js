@@ -1,9 +1,7 @@
 const { readFileSync } = require("fs")
-
-fs = require("fs")
 const TARGET = 2020
-const inputs = fs.readFileSync("../input.txt", "UTF-8")
-const sortedNumbers = inputs
+const inputs = readFileSync("../input.txt", "UTF-8")
+const sortedNumbersAsc = inputs
   .split(/\r?\n/)
   .map((v) => Number(v))
   .sort((a, b) => a - b)
@@ -35,4 +33,4 @@ function threeSum(numbers, target) {
   return result
 }
 
-console.log(threeSum(sortedNumbers, TARGET))
+console.log(threeSum(sortedNumbersAsc, TARGET))
