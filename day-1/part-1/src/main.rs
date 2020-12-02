@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-fn main() {
+fn part_one() {
     const TARGET: i32 = 2020;
     let file = File::open("../input.txt").expect("cannot open file");
     let file = BufReader::new(file);
