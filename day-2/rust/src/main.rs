@@ -37,7 +37,7 @@ fn part_two(lines: &Vec<(i64, i64, char, &str)>) -> i64 {
     result
 }
 fn main() {
-    let input = fs::read_to_string("../input.txt").unwrap();
+    let input = fs::read_to_string("../input").unwrap();
     let lines = input
         .split("\n")
         .map(|line| {

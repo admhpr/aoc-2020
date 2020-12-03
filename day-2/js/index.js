@@ -1,5 +1,5 @@
 const { readFileSync } = require("fs")
-const inputs = readFileSync("../input.txt", "UTF-8").split(/\r?\n/)
+const inputs = readFileSync("../input", "UTF-8").split(/\r?\n/)
 
 const valid = []
 // part 1

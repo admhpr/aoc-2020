@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 
 fn part_one() {
     const TARGET: i32 = 2020;
-    let file = File::open("../input.txt").expect("cannot open file");
+    let file = File::open("../input").expect("cannot open file");
     let file = BufReader::new(file);
     let mut numbers = Vec::new();
     for line in file.lines().filter_map(|result| result.ok()) {

@@ -1,6 +1,6 @@
 const { readFileSync } = require("fs")
 const TARGET = 2020
-const inputs = readFileSync("../input.txt", "UTF-8")
+const inputs = readFileSync("../input", "UTF-8")
 const sortedNumbersAsc = inputs
   .split(/\r?\n/)
   .map((v) => Number(v))
