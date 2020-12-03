@@ -2,7 +2,7 @@ const { readFileSync } = require("fs")
 const inputs = readFileSync("../input", "UTF-8").split(/\r?\n/)
 
 const valid = []
-// part 1
+// part one
 function countLetters({ policy: { lower, upper }, password, letterToFind }) {
   let counter = 0
   const letters = password.split("")
