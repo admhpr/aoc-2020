@@ -17,12 +17,13 @@ function isValidPassword(ruleSet) {
   const [rule, letterRule, password] = ruleSet.split(" ")
   const [letter] = letterRule.split(":")
   const [lower, upper] = rule.split("-")
-  //   const args = {
-  //     policy: { lower, upper },
-  //     password,
-  //     letterToFind: letter,
-  //   }
-  //   const letterCount = countLetters(args)
+  const args = {
+    policy: { lower, upper },
+    password,
+    letterToFind: letter,
+  }
+  // part one
+  const letterCount = countLetters(args)
   const isInLower = password[lower - 1] === letter
   const isInUpper = password[upper - 1] === letter
   return (isInLower && !isInUpper) || (!isInLower && isInUpper)
