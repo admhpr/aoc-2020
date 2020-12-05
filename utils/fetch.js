@@ -68,7 +68,6 @@ function createInstructions(location) {
       for await (const chunk of res) {
         body += chunk
       }
-      console.log(body)
       const markdown = parsePage(body, BASE_URL)
       try {
         await writeFile(join(location, "README.md"), markdown)
