@@ -1,4 +1,4 @@
 */debug/
 */target/
 */node_modules
-/utils/.env
+.env
