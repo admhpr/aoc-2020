@@ -29,7 +29,7 @@ async function createStart(location) {
     const { readFileSync } = require("fs")
     const inputs = readFileSync("./input", "UTF-8").split("/\n/")
     function main(inputs){
-
+      console.log(inputs)
     }
     main(inputs)
   `
