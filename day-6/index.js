@@ -31,7 +31,9 @@ function countLetters(group) {
     intersection = intersection.filter((v) => [...ans].includes(v))
   }
 
-  console.log(intersection)
+  // part one
+  // return seen.lengh
+  // part two
   return intersection.length
 }
 function yesPerGroup(groups) {
@@ -43,7 +45,7 @@ function yesPerGroup(groups) {
 }
 function main(inputs) {
   const groups = group(inputs)
-  const partOne = yesPerGroup(groups)
-  console.log(partOne)
+  const commonYes = yesPerGroup(groups)
+  console.log(commonYes)
 }
 main(inputs)
