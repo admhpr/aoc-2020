@@ -27,7 +27,7 @@ async function createDir(location) {
 async function createStart(location) {
   const template = `
     const { readFileSync } = require("fs")
-    const inputs = readFileSync("./input", "UTF-8").split("/\n/")
+    const inputs = readFileSync("./input", "UTF-8").split("/'\n'/")
     function main(inputs){
       console.log(inputs)
     }
@@ -49,11 +49,7 @@ function createInput(location) {
       for await (const chunk of res) {
         body += chunk
       }
-      try {
-        await writeFile(join(location, "input"), body.trim())
-      } catch (e) {
-        console.error(`file already exists. ${location}/input`)
-      }
+      await writeFile(join(location, "input"), body.trim())
     } catch (e) {
       console.error(e)
     }
@@ -69,11 +65,7 @@ function createInstructions(location) {
         body += chunk
       }
       const markdown = parsePage(body, BASE_URL)
-      try {
-        await writeFile(join(location, "README.md"), markdown)
-      } catch (e) {
-        console.error(`file already exists. ${location}/README.md`)
-      }
+      await writeFile(join(location, "README.md"), markdown)
     } catch (e) {
       console.error(e)
     }
