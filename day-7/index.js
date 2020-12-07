@@ -5,6 +5,7 @@ const inputs = readFileSync("./input", "UTF-8").split(/\n/)
 function createMap(input) {
   const contains = new Set()
   const containedIn = {}
+  // https://javascript.info/regexp-groups
   const colourRe = /(.+?) bags contain/
   const innerColourRe = /(\d+) (.+?) bags?[,.]/g
   for (const rule of input) {
