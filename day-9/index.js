@@ -29,13 +29,10 @@ function findSum(inputs, target) {
   for (const number of inputs) {
     total += number
     sumParts.push(total)
-    for (const [index, _] of sumParts.entries()) {
+    for (const [index, part] of sumParts.entries()) {
       let check = index + 2
-      while (
-        check < sumParts.length &&
-        sumParts[check] - sumParts[index] <= target
-      ) {
-        if (sumParts[check] - sumParts[index] === target) {
+      while (check < sumParts.length && sumParts[check] - part <= target) {
+        if (sumParts[check] - part === target) {
           const parts = inputs.slice(index, check)
           return Math.max(...parts) + Math.min(...parts)
         }
