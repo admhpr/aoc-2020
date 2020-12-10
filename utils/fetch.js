@@ -27,7 +27,7 @@ async function createDir(location) {
 async function createStart(location) {
   const template = `
     const { readFileSync } = require("fs")
-    // const inputs = readFileSync("./input", "UTF-8").split(/\n/)
+    // const inputs = readFileSync("./input", "UTF-8").split(/n/) \\
     function main(inputs){
       console.log(inputs)
     }
