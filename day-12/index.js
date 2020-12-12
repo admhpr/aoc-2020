@@ -57,7 +57,7 @@ function getDistanceTravelled(inputs) {
   }
   return Math.abs(ship.x) + Math.abs(ship.y)
 }
-function rotateWaypoints(rotation, degrees, ship) {
+function rotateWaypoint(rotation, degrees, ship) {
   let turn = degrees
   while (turn > 0) {
     if (rotation === "R") {
@@ -69,7 +69,7 @@ function rotateWaypoints(rotation, degrees, ship) {
     turn -= 90
   }
 }
-function getDistanceTravelledWithWaypoints(inputs) {
+function getDistanceTravelledWithWaypoint(inputs) {
   const ship = {
     x: 0,
     y: 0,
@@ -95,10 +95,10 @@ function getDistanceTravelledWithWaypoints(inputs) {
       ship.waypoint.x -= amount
     }
     if (action === "L") {
-      rotateWaypoints(action, amount, ship)
+      rotateWaypoint(action, amount, ship)
     }
     if (action === "R") {
-      rotateWaypoints(action, amount, ship)
+      rotateWaypoint(action, amount, ship)
     }
 
     if (action === "F") {
@@ -110,10 +110,8 @@ function getDistanceTravelledWithWaypoints(inputs) {
 }
 function main(inputs) {
   const distanceTravelled = getDistanceTravelled(inputs)
-  const distanceTravelledWithWaypoints = getDistanceTravelledWithWaypoints(
-    inputs
-  )
+  const distanceTravelledWithWaypoint = getDistanceTravelledWithWaypoint(inputs)
   console.log("distance", distanceTravelled)
-  console.log("distance with waypoints", distanceTravelledWithWaypoints)
+  console.log("distance with waypoint", distanceTravelledWithWaypoint)
 }
 main(inputs)
