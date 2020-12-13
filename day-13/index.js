@@ -15,7 +15,6 @@ function timestampBuses(inputs) {
   restOfBuses.forEach(([bus, minutesAfter]) => {
     while (true) {
       if ((timestamp + minutesAfter) % bus == 0) {
-        debugger
         incrementBy *= bus
         break
       }
