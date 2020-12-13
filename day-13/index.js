@@ -4,8 +4,7 @@ const inputs = readFileSync("./input", "UTF-8").split(/\n/)
 function timestampBuses(inputs) {
   const [t, buses] = inputs
   const busIds = buses
-    .replace(/,/g, "\n")
-    .split("\n")
+    .split(",")
     .map((n, i) => [parseInt(n), i])
     .filter(([n]) => !Number.isNaN(n))
 
@@ -27,11 +26,10 @@ function nearestBus(inputs) {
   const [t, buses] = inputs
   const busIds = buses
     .replace(/,x/g, "")
-    .replace(/,/g, "\n")
-    .split("\n")
+    .split(",")
     .map((n) => parseInt(n))
-  const depart = parseInt(t)
 
+  const depart = parseInt(t)
   let time = depart
   let nextBus = busIds.find((bus) => time % bus === 0)
 
